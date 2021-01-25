@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Unity" Version="5.11.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SportsCompany.FitnessTracker.Peripherals.Contracts\SportsCompany.FitnessTracker.Peripherals.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>
