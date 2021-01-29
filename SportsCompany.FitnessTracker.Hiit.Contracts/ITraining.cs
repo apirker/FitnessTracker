@@ -1,10 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace SportsCompany.FitnessTracker.Hiit.Contracts
 {
     public interface ITraining
     {
         string Name { get; }
+
+        TimeSpan? LastDuration { get; }
 
         IHeartRate HeartRate { get; }
 

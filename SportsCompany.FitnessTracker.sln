@@ -33,7 +33,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsCompany.FitnessTracke
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Environment", "Environment", "{A23F091B-6A6B-4E46-806C-897B46EAEB86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsCompany.FitnessTracker.Hiit.WinEnvironment", "SportsCompany.FitnessTracker.Hiit.WinEnvironment\SportsCompany.FitnessTracker.Hiit.WinEnvironment.csproj", "{981896A9-150C-448D-9A21-BA0A771C4CF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsCompany.FitnessTracker.Hiit.WinEnvironment", "SportsCompany.FitnessTracker.Hiit.WinEnvironment\SportsCompany.FitnessTracker.Hiit.WinEnvironment.csproj", "{981896A9-150C-448D-9A21-BA0A771C4CF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsCompany.FitnessTracker.UI.Endurance", "SportsCompany.FitnessTracker.UI.Endurance\SportsCompany.FitnessTracker.UI.Endurance.csproj", "{3A2A47A8-C0E4-418D-8AEF-5B587466901E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsCompany.FitnessTracker.UI.Hiit", "SportsCompany.FitnessTracker.UI.Hiit\SportsCompany.FitnessTracker.UI.Hiit.csproj", "{E51663CB-F0CF-4970-A99D-2054901DD3A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +81,14 @@ Global
 		{981896A9-150C-448D-9A21-BA0A771C4CF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{981896A9-150C-448D-9A21-BA0A771C4CF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{981896A9-150C-448D-9A21-BA0A771C4CF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A2A47A8-C0E4-418D-8AEF-5B587466901E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A2A47A8-C0E4-418D-8AEF-5B587466901E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A2A47A8-C0E4-418D-8AEF-5B587466901E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A2A47A8-C0E4-418D-8AEF-5B587466901E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E51663CB-F0CF-4970-A99D-2054901DD3A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E51663CB-F0CF-4970-A99D-2054901DD3A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E51663CB-F0CF-4970-A99D-2054901DD3A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E51663CB-F0CF-4970-A99D-2054901DD3A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,6 +106,8 @@ Global
 		{84A723FC-D4F3-4462-BB07-4FBE5152EC28} = {BC392294-CF66-405C-9925-3F057236F7F1}
 		{A23F091B-6A6B-4E46-806C-897B46EAEB86} = {D0BA4782-4845-40E5-9E13-4907E041F592}
 		{981896A9-150C-448D-9A21-BA0A771C4CF6} = {A23F091B-6A6B-4E46-806C-897B46EAEB86}
+		{3A2A47A8-C0E4-418D-8AEF-5B587466901E} = {B5269A96-C0AF-4466-A487-5E8AFB70474D}
+		{E51663CB-F0CF-4970-A99D-2054901DD3A2} = {B5269A96-C0AF-4466-A487-5E8AFB70474D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DD1E40FD-8746-4397-9E2B-D283B9528BB3}

@@ -2,12 +2,15 @@
 using SportsCompany.FitnessTracker.Hiit.Contracts.AntiCorruption;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace SportsCompany.FitnessTracker.Hiit.BoundedContext
 {
     class Training : ITraining
     {
+        private Stopwatch stopWatch = new Stopwatch();
+
         private string name;
         private IList<Round> rounds = new List<Round>();
         private HeartRate heartRate;
@@ -25,6 +28,8 @@ namespace SportsCompany.FitnessTracker.Hiit.BoundedContext
         public int PauseInSecBetweenRounds => pauseInSecBetweenRounds;
 
         public IList<IRound> Rounds => rounds.Select(r => r as IRound).ToList();
+
+        public TimeSpan? LastDuration { get; private set; }
 
         internal void AddRound()
         {
@@ -61,11 +66,15 @@ namespace SportsCompany.FitnessTracker.Hiit.BoundedContext
         internal void Start(HiitDataService hiitDataService)
         {
             hiitDataService.StartActivity();
+            stopWatch.Start();
         }
 
         internal void Stop(HiitDataService hiitDataService)
         {
-           hiitDataService.StopActivity();
+            hiitDataService.StopActivity();
+            stopWatch.Stop();
+
+            LastDuration = stopWatch.Elapsed;
 
             var heartRateDto = hiitDataService.GetHeartRate();
             heartRate = new HeartRate(heartRateDto.Pulses);

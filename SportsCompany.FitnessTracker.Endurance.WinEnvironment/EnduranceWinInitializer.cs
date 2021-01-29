@@ -1,13 +1,10 @@
 ﻿using SportsCompany.FitnessTracker.Endurance.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Unity;
 using Unity.Lifetime;
 
 namespace SportsCompany.FitnessTracker.Endurance.WinEnvironment
 {
-    public class Initializer
+    public class EnduranceWinInitializer
     {
         public static void Init(IUnityContainer unityContainer)
         {

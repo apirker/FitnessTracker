@@ -1,0 +1,39 @@
+﻿<Window x:Class="SportsCompany.FitnessTracker.UI.Hiit.HiitEditor.HiitEditorView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SportsCompany.FitnessTracker.UI.Hiit.HiitEditor"
+        mc:Ignorable="d"
+        Title="HiitEditorView" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Name: " />
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Name}" />
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Round specification: " />
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding RoundSpecification}"/>
+
+        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Content="Add round" 
+                Command="{Binding AddRoundUiCommand}" 
+                CommandParameter="{Binding}" />
+        
+        <ListBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                 ItemsSource="{Binding Rounds}" />
+
+        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Content="Save" 
+                Command="{Binding SaveUiCommand}"
+                CommandParameter="{Binding}" />
+    </Grid>
+</Window>

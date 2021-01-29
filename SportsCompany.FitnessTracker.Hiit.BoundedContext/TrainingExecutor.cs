@@ -23,6 +23,8 @@ namespace SportsCompany.FitnessTracker.Hiit.BoundedContext
         {
             var training = (Training)trainingRepository.FindTrainingByName(name);
             training.Stop(hiitDataService);
+
+            trainingRepository.Update(training);
         }
     }
 }
