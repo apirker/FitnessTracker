@@ -4,8 +4,9 @@ namespace SportsCompany.FitnessTracker.Endurance.Contracts
 {
     public interface ITraining
     {
-        IList<ILap> Laps { get; }
-        IList<IGpsCoordinate> GpsCoordinates { get; }
+        List<ILap> Laps { get; }
+        List<IGpsCoordinate> GpsCoordinates { get; }
         IHeartRate HeartRate { get; }
+        double TrainingsEffect { get; }
     }
 }

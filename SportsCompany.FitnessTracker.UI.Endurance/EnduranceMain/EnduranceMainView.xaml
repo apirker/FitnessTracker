@@ -1,0 +1,23 @@
+﻿<Window x:Class="SportsCompany.FitnessTracker.UI.Endurance.EnduranceMain.EnduranceMainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SportsCompany.FitnessTracker.UI.Endurance.EnduranceMain"
+        mc:Ignorable="d"
+        Title="EnduranceMainView" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Content="For simplicity only Runs:" />
+
+        <ListBox Grid.Row="1"
+                 ItemsSource="{Binding EnduranceItems}"/>
+
+        <Button Grid.Row="2" Content="Start a new run" Command="{Binding OpenNewEnduranceUiCommand}" CommandParameter="{Binding}" />
+    </Grid>
+</Window>

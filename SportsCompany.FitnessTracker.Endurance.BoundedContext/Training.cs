@@ -65,7 +65,7 @@ namespace SportsCompany.FitnessTracker.Endurance.BoundedContext
 
         internal TimeSpan Duration => new TimeSpan(laps.Sum(l => l.Duration.Ticks));
 
-        internal double TrainingsEffect {
+        public double TrainingsEffect {
 
             get{
                 if (type == Type.Running)
@@ -77,10 +77,10 @@ namespace SportsCompany.FitnessTracker.Endurance.BoundedContext
 
         internal Type Type => type;
 
-        public IList<ILap> Laps => (IList<ILap>) laps;
+        public List<ILap> Laps => laps.Select(l => l as ILap).ToList();
 
         public IHeartRate HeartRate => heartRate;
 
-        public IList<IGpsCoordinate> GpsCoordinates => (IList<IGpsCoordinate>) gpsCoordinates;
+        public List<IGpsCoordinate> GpsCoordinates => gpsCoordinates.Select(g => g as IGpsCoordinate).ToList();
     }
 }

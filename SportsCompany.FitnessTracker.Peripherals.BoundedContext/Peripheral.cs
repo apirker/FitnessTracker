@@ -10,15 +10,15 @@ namespace SportsCompany.FitnessTracker.Peripherals.BoundedContext
         {
             return new List<(double, int)>()
             {
-                (random.Next(),random.Next()),
-                (random.Next(),random.Next()),
-                (random.Next(),random.Next())
+                (random.Next(),random.Next(0,200)),
+                (random.Next(),random.Next(0,200)),
+                (random.Next(),random.Next(0,200))
             };
         }
 
         public (double, int) GetNextLapData()
         {
-            return (random.Next(), random.Next());
+            return (1, random.Next());
         }
 
         public void StartActivity()

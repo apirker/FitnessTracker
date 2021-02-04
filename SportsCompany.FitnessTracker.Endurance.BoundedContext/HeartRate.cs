@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace SportsCompany.FitnessTracker.Endurance.BoundedContext
 {
@@ -24,5 +23,7 @@ namespace SportsCompany.FitnessTracker.Endurance.BoundedContext
         internal int Min => pulses.Select(i => i.Item2).Min();
 
         public List<(double, int)> Pulses => pulses;
+
+        public double Avergage => pulses.Select(i => i.Item2).Average();
     }
 }

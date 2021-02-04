@@ -48,6 +48,21 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EnduranceActivity\EnduranceActivityView.xaml.cs">
+      <DependentUpon>EnduranceActivityView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EnduranceActivity\EnduranceActivityViewModel.cs" />
+    <Compile Include="EnduranceActivity\IEnduranceActivityView.cs" />
+    <Compile Include="EnduranceActivity\UiCommands\SaveActivityUiCommand.cs" />
+    <Compile Include="EnduranceActivity\UiCommands\StartActivityUiCommand.cs" />
+    <Compile Include="EnduranceActivity\UiCommands\StopActivityUiCommand.cs" />
+    <Compile Include="EnduranceMain\EnduranceMainView.xaml.cs">
+      <DependentUpon>EnduranceMainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EnduranceMain\EnduranceMainViewModel.cs" />
+    <Compile Include="EnduranceMain\EnduranceViewModel.cs" />
+    <Compile Include="EnduranceMain\IEnduranceMainView.cs" />
+    <Compile Include="EnduranceMain\UiCommands\OpenNewEnduranceUiCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -75,6 +90,22 @@
     <PackageReference Include="Unity">
       <Version>5.11.9</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="EnduranceActivity\EnduranceActivityView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EnduranceMain\EnduranceMainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SportsCompany.FitnessTracker.Endurance.Contracts\SportsCompany.FitnessTracker.Endurance.Contracts.csproj">
+      <Project>{ef8d8fc7-d1e0-49ed-b141-a8f22eb93318}</Project>
+      <Name>SportsCompany.FitnessTracker.Endurance.Contracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
