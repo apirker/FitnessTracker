@@ -107,6 +107,10 @@
       <Project>{ea04f2ce-e810-44ff-9d4d-d4efa75222e2}</Project>
       <Name>SportsCompany.FitnessTracker.Endurance.BoundedContext</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SportsCompany.FitnessTracker.Endurance.ServiceMock\SportsCompany.FitnessTracker.Endurance.ServiceMock.csproj">
+      <Project>{6e47bdd1-f162-4cfd-9265-88f56be8f183}</Project>
+      <Name>SportsCompany.FitnessTracker.Endurance.ServiceMock</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SportsCompany.FitnessTracker.Endurance.WinEnvironment\SportsCompany.FitnessTracker.Endurance.WinEnvironment.csproj">
       <Project>{84a723fc-d4f3-4462-bb07-4fbe5152ec28}</Project>
       <Name>SportsCompany.FitnessTracker.Endurance.WinEnvironment</Name>

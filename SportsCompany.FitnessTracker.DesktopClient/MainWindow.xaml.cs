@@ -1,25 +1,14 @@
 ﻿using SportsCompany.FitnessTracker.DesktopClient.UiCommands;
 using SportsCompany.FitnessTracker.Endurance.BoundedContext;
+using SportsCompany.FitnessTracker.Endurance.ServiceMock;
 using SportsCompany.FitnessTracker.Endurance.WinEnvironment;
 using SportsCompany.FitnessTracker.Hiit.BoundedContext;
 using SportsCompany.FitnessTracker.Hiit.WinEnvironment;
 using SportsCompany.FitnessTracker.Peripherals.BoundedContext;
 using SportsCompany.FitnessTracker.UI.Endurance;
 using SportsCompany.FitnessTracker.UI.Hiit;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Unity;
 using Unity.Lifetime;
 
@@ -43,9 +32,18 @@ namespace SportsCompany.FitnessTracker.DesktopClient
             HiitWinInitializer.Init(unityContainer);
 
             UiEnduranceInitializer.Init(unityContainer);
-            EnduranceBoundedContextInitializer.Init(unityContainer);
-            EnduranceWinInitializer.Init(unityContainer);
 
+            var useServiceImplementation = true;
+            if (useServiceImplementation)
+            {
+                EnduranceServiceMockInitializer.Init(unityContainer);
+            }
+            else
+            {
+                EnduranceBoundedContextInitializer.Init(unityContainer);
+                EnduranceWinInitializer.Init(unityContainer);
+            }
+            
             PeripheralBoundedContextInitializer.Init(unityContainer);
 
             unityContainer.RegisterType<MainWindowViewModel>(new ContainerControlledLifetimeManager());
