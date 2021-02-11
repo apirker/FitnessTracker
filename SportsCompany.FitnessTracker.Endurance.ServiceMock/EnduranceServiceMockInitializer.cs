@@ -7,7 +7,7 @@ namespace SportsCompany.FitnessTracker.Endurance.ServiceMock
     {
         public static void Init(IUnityContainer unityContainer)
         {
-            unityContainer.RegisterType<ITrainingRepository, TrainingRepositoryMock>();
+            unityContainer.RegisterType<ITrainingRepository, TrainingServiceMock>();
             unityContainer.RegisterType<ITrainingService, TrainingServiceMock>();
         }
     }

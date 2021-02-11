@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SportsCompany.FitnessTracker.Endurance.Contracts\SportsCompany.FitnessTracker.Endurance.Contracts.csproj" />
+    <ProjectReference Include="..\SportsCompany.FitnessTracker.Endurance.WebApi.Dtos\SportsCompany.FitnessTracker.Endurance.WebApi.Dtos.csproj" />
   </ItemGroup>
 
 </Project>

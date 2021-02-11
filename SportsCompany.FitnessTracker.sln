@@ -41,9 +41,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsCompany.FitnessTracke
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{3DFCC7D0-32E0-4CDB-A109-11C6DB2BA9F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsCompany.FitnessTracker.Endurance.WebApi", "SportsCompany.FitnessTracker.Endurance.WebApi\SportsCompany.FitnessTracker.Endurance.WebApi.csproj", "{780D459E-98BA-4F54-85E0-C86FF6705B2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsCompany.FitnessTracker.Endurance.WebApi", "SportsCompany.FitnessTracker.Endurance.WebApi\SportsCompany.FitnessTracker.Endurance.WebApi.csproj", "{780D459E-98BA-4F54-85E0-C86FF6705B2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsCompany.FitnessTracker.Endurance.ServiceMock", "SportsCompany.FitnessTracker.Endurance.ServiceMock\SportsCompany.FitnessTracker.Endurance.ServiceMock.csproj", "{6E47BDD1-F162-4CFD-9265-88F56BE8F183}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsCompany.FitnessTracker.Endurance.ServiceMock", "SportsCompany.FitnessTracker.Endurance.ServiceMock\SportsCompany.FitnessTracker.Endurance.ServiceMock.csproj", "{6E47BDD1-F162-4CFD-9265-88F56BE8F183}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsCompany.FitnessTracker.Endurance.WebApi.Dtos", "SportsCompany.FitnessTracker.Endurance.WebApi.Dtos\SportsCompany.FitnessTracker.Endurance.WebApi.Dtos.csproj", "{8ED319E7-B4C5-4BD2-BF95-FBB5251318D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -103,6 +105,10 @@ Global
 		{6E47BDD1-F162-4CFD-9265-88F56BE8F183}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E47BDD1-F162-4CFD-9265-88F56BE8F183}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E47BDD1-F162-4CFD-9265-88F56BE8F183}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ED319E7-B4C5-4BD2-BF95-FBB5251318D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ED319E7-B4C5-4BD2-BF95-FBB5251318D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ED319E7-B4C5-4BD2-BF95-FBB5251318D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ED319E7-B4C5-4BD2-BF95-FBB5251318D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -125,6 +131,7 @@ Global
 		{3DFCC7D0-32E0-4CDB-A109-11C6DB2BA9F4} = {1F6D3E4D-5BBB-4C82-BDC6-D7E7472D8EB8}
 		{780D459E-98BA-4F54-85E0-C86FF6705B2B} = {3DFCC7D0-32E0-4CDB-A109-11C6DB2BA9F4}
 		{6E47BDD1-F162-4CFD-9265-88F56BE8F183} = {720ED264-A4D0-45C4-8064-29011D733706}
+		{8ED319E7-B4C5-4BD2-BF95-FBB5251318D0} = {3DFCC7D0-32E0-4CDB-A109-11C6DB2BA9F4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DD1E40FD-8746-4397-9E2B-D283B9528BB3}
