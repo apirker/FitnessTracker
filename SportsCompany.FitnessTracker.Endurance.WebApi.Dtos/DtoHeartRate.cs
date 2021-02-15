@@ -2,10 +2,5 @@
 
 namespace SportsCompany.FitnessTracker.Endurance.WebApi.Dtos
 {
-    public class DtoHeartRate
-    {
-        public List<(double, int)> Pulses { get; set; }
-
-        public double Avergage { get; set; }
-    }
+    public record DtoHeartRate(List<(double, int)> Pulses, double Avergage);
 }

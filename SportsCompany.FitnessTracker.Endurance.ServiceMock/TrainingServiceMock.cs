@@ -1,7 +1,8 @@
 ﻿using Newtonsoft.Json;
 using SportsCompany.FitnessTracker.Endurance.Contracts;
 using SportsCompany.FitnessTracker.Endurance.Contracts.AntiCorruption;
-using SportsCompany.FitnessTracker.Endurance.WebApi.Dtos;
+using SportsCompany.FitnessTracker.Endurance.ServiceMock.Dtos;
+using SportsCompany.FitnessTracker.Endurance.ServiceMock.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;

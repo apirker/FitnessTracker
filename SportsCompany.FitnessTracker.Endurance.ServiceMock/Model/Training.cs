@@ -1,7 +1,7 @@
 ﻿using SportsCompany.FitnessTracker.Endurance.Contracts;
 using System.Collections.Generic;
 
-namespace SportsCompany.FitnessTracker.Endurance.WebApi.Dtos
+namespace SportsCompany.FitnessTracker.Endurance.ServiceMock.Model
 {
     public class Training : ITraining
     {

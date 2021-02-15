@@ -1,6 +1,6 @@
 ﻿using SportsCompany.FitnessTracker.Endurance.Contracts;
 
-namespace SportsCompany.FitnessTracker.Endurance.WebApi.Dtos
+namespace SportsCompany.FitnessTracker.Endurance.ServiceMock.Model
 {
     public class GpsCoordinate : IGpsCoordinate
     {

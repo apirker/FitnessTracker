@@ -59,27 +59,11 @@ namespace SportsCompany.FitnessTracker.Endurance.WebApi.Controllers
             var trainings = repository.GetAll();
             Debug.WriteLine($"Found {trainings.Count} training ...");
 
-            return trainings.Select(t => new DtoTraining()
-            {
-                Laps = t.Laps.Select(l => new DtoLap()
-                {
-                    DistanceInKm = l.DistanceInKm,
-                    Duration = l.Duration.Ticks
-                }).ToList(),
-                GpsCoordinates = t.GpsCoordinates.Select(g =>
-                new DtoGpsCoordinate
-                {
-                    Latitude = g.Latitude,
-                    Longitude = g.Longitude
-                }).ToList(),
-                HeartRate = new DtoHeartRate
-                {
-                    Pulses = t.HeartRate.Pulses,
-                    Avergage = t.HeartRate.Avergage
-                },
-                TrainingsEffect = t.TrainingsEffect
-            }
-            ).ToList();
+            return trainings.Select(t => new DtoTraining(
+                t.Laps.Select(l => new DtoLap(l.DistanceInKm, l.Duration.Ticks)).ToList(),
+                t.GpsCoordinates.Select(g => new DtoGpsCoordinate( g.Latitude, g.Longitude)).ToList(),
+                new DtoHeartRate(t.HeartRate.Pulses, t.HeartRate.Avergage),
+                t.TrainingsEffect)).ToList();
         }
     }
 }
