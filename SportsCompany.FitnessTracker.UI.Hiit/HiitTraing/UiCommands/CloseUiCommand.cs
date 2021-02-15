@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using System.Windows.Input;
 
 namespace SportsCompany.FitnessTracker.UI.Hiit.HiitTraing.UiCommands
@@ -21,7 +22,14 @@ namespace SportsCompany.FitnessTracker.UI.Hiit.HiitTraing.UiCommands
 
         public void Execute(object parameter)
         {
-            view.Close();
+            try
+            {
+                view.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Something went wrong on closing the activity.");
+            }
         }
     }
 }

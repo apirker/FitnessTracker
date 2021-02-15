@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace SportsCompany.FitnessTracker.UI.Hiit.HiitTraing.UiCommands
@@ -28,6 +29,8 @@ namespace SportsCompany.FitnessTracker.UI.Hiit.HiitTraing.UiCommands
 
         public void Execute(object parameter)
         {
+            try
+            { 
             var viewModel = parameter as HiitTrainViewModel;
             if (viewModel == null)
                 return;
@@ -36,7 +39,11 @@ namespace SportsCompany.FitnessTracker.UI.Hiit.HiitTraing.UiCommands
 
             var training = trainingRepository.FindTrainingByName(viewModel.Name);
             viewModel.Duration = training.LastDuration;
-
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Something went wrong on stoping the activity.");
+            }
 
         }
     }

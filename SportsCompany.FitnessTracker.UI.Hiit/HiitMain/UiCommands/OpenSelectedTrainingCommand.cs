@@ -1,6 +1,7 @@
 ﻿using SportsCompany.FitnessTracker.Hiit.Contracts;
 using SportsCompany.FitnessTracker.UI.Hiit.HiitTraing;
 using System;
+using System.Windows;
 using System.Windows.Input;
 using Unity;
 
@@ -23,13 +24,20 @@ namespace SportsCompany.FitnessTracker.UI.Hiit.HiitMain.UiCommands
 
         public void Execute(object parameter)
         {
-            var viewModel = parameter as HiitMainViewModel;
-            if (viewModel == null || viewModel.SelectedTraining == null)
-                return;
+            try
+            {
+                var viewModel = parameter as HiitMainViewModel;
+                if (viewModel == null || viewModel.SelectedTraining == null)
+                    return;
 
-            var view = unityContainer.Resolve<IHiitTrainView>();
-            view.ViewClosed += View_ViewClosed;
-            view.Show(viewModel.SelectedTraining.Name);
+                var view = unityContainer.Resolve<IHiitTrainView>();
+                view.ViewClosed += View_ViewClosed;
+                view.Show(viewModel.SelectedTraining.Name);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Something went wrong on opening the selected activity.");
+            }
         }
 
         private void View_ViewClosed(object sender, EventArgs e)

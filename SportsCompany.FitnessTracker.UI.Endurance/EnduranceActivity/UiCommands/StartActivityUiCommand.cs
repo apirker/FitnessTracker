@@ -1,6 +1,7 @@
 ﻿using SportsCompany.FitnessTracker.Endurance.Contracts;
 using SportsCompany.FitnessTracker.Endurance.Contracts.AntiCorruption;
 using System;
+using System.Windows;
 using System.Windows.Input;
 
 namespace SportsCompany.FitnessTracker.UI.Endurance.EnduranceActivity.UiCommands
@@ -24,13 +25,20 @@ namespace SportsCompany.FitnessTracker.UI.Endurance.EnduranceActivity.UiCommands
 
         public void Execute(object parameter)
         {
-            var viewModel = parameter as EnduranceActivityViewModel;
-            if (viewModel is null)
-                return;
+            try
+            {
+                var viewModel = parameter as EnduranceActivityViewModel;
+                if (viewModel is null)
+                    return;
 
-            viewModel.State = "Running...";
+                viewModel.State = "Running...";
 
-            trainingService.StartTraining(enduranceDataService);
+                trainingService.StartTraining(enduranceDataService);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Something went wrong on starting the activity.");
+            }
         }
     }
 }

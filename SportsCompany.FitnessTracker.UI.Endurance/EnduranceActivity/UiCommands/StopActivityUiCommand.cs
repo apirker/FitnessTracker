@@ -1,5 +1,6 @@
 ﻿using SportsCompany.FitnessTracker.Endurance.Contracts;
 using System;
+using System.Windows;
 using System.Windows.Input;
 
 namespace SportsCompany.FitnessTracker.UI.Endurance.EnduranceActivity.UiCommands
@@ -21,17 +22,24 @@ namespace SportsCompany.FitnessTracker.UI.Endurance.EnduranceActivity.UiCommands
 
         public void Execute(object parameter)
         {
-            var viewModel = parameter as EnduranceActivityViewModel;
-            if (viewModel == null)
-                return;
+            try
+            {
+                var viewModel = parameter as EnduranceActivityViewModel;
+                if (viewModel == null)
+                    return;
 
-            viewModel.State = "Stopped";
+                viewModel.State = "Stopped";
 
-            var result = trainingService.StopTraining();
+                var result = trainingService.StopTraining();
 
-            viewModel.Distance = result.Distance;
-            viewModel.Duration = result.Duration;
-            viewModel.TrainingEffect = result.TrainingEffect;
-        }
+                viewModel.Distance = result.Distance;
+                viewModel.Duration = result.Duration;
+                viewModel.TrainingEffect = result.TrainingEffect;
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Something went wrong on stoping the activity.");
+            }
+}
     }
 }

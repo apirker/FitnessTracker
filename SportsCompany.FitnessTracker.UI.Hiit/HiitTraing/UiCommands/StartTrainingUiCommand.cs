@@ -1,5 +1,6 @@
 ﻿using SportsCompany.FitnessTracker.Hiit.Contracts;
 using System;
+using System.Windows;
 using System.Windows.Input;
 
 namespace SportsCompany.FitnessTracker.UI.Hiit.HiitTraing.UiCommands
@@ -22,11 +23,18 @@ namespace SportsCompany.FitnessTracker.UI.Hiit.HiitTraing.UiCommands
 
         public void Execute(object parameter)
         {
-            var viewModel = parameter as HiitTrainViewModel;
-            if (viewModel == null)
-                return;
+            try
+            {
+                var viewModel = parameter as HiitTrainViewModel;
+                if (viewModel == null)
+                    return;
 
-            trainingExecutor.Start(viewModel.Name);
+                trainingExecutor.Start(viewModel.Name);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Something went wrong on starting the activity.");
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using SportsCompany.FitnessTracker.Endurance.Contracts;
 using System;
+using System.Windows;
 using System.Windows.Input;
 
 namespace SportsCompany.FitnessTracker.UI.Endurance.EnduranceActivity.UiCommands
@@ -23,8 +24,15 @@ namespace SportsCompany.FitnessTracker.UI.Endurance.EnduranceActivity.UiCommands
 
         public void Execute(object parameter)
         {
-            trainingService.SaveTraining();
-            view.Close();
+            try
+            {
+                trainingService.SaveTraining();
+                view.Close();
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Something went wrong on saving the activity.");
+            }
         }
     }
 }

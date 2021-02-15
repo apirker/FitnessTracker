@@ -1,6 +1,7 @@
 ﻿using SportsCompany.FitnessTracker.Hiit.Contracts;
 using SportsCompany.FitnessTracker.UI.Hiit.HiitEditor;
 using System;
+using System.Windows;
 using System.Windows.Input;
 using Unity;
 
@@ -24,9 +25,16 @@ namespace SportsCompany.FitnessTracker.UI.Hiit.HiitMain.UiCommands
 
         public void Execute(object parameter)
         {
-            var view = unityContainer.Resolve<IHiitEditorView>();
-            view.ViewClosed += View_ViewClosed;
-            view.Show();
+            try
+            {
+                var view = unityContainer.Resolve<IHiitEditorView>();
+                view.ViewClosed += View_ViewClosed;
+                view.Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Something went wrong on creting the new training.");
+            }
         }
 
         private void View_ViewClosed(object sender, EventArgs e)

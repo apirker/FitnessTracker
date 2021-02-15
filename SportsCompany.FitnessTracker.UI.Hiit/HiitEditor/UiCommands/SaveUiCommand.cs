@@ -1,5 +1,6 @@
 ﻿using SportsCompany.FitnessTracker.Hiit.Contracts;
 using System;
+using System.Windows;
 using System.Windows.Input;
 
 namespace SportsCompany.FitnessTracker.UI.Hiit.HiitEditor.UiCommands
@@ -26,22 +27,29 @@ namespace SportsCompany.FitnessTracker.UI.Hiit.HiitEditor.UiCommands
 
         public void Execute(object parameter)
         {
-            var viewModel = parameter as HiitEditorViewModel;
-            if (viewModel == null)
-                return;
-
-            var training = trainingPlanner.NewTraining(viewModel.Name);
-
-            foreach(var round in viewModel.Rounds)
+            try
             {
-                trainingPlanner.AddRound();
-                
-                foreach(var exercise in round.Exercises)
-                    trainingPlanner.AddExercise(round.RoundNumber - 1, exercise.Name, exercise.Duration);
-            }
+                var viewModel = parameter as HiitEditorViewModel;
+                if (viewModel == null)
+                    return;
 
-            trainingRepository.Add(training);
-            hiitEditorView.Close();
+                var training = trainingPlanner.NewTraining(viewModel.Name);
+
+                foreach (var round in viewModel.Rounds)
+                {
+                    trainingPlanner.AddRound();
+
+                    foreach (var exercise in round.Exercises)
+                        trainingPlanner.AddExercise(round.RoundNumber - 1, exercise.Name, exercise.Duration);
+                }
+
+                trainingRepository.Add(training);
+                hiitEditorView.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Something went wrong on saving the activity.");
+            }
         }
     }
 }
