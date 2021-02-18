@@ -3,6 +3,9 @@ using System;
 
 namespace SportsCompany.FitnessTracker.Endurance.ServiceMock.Model
 {
+    /// <summary>
+    /// Service model for returning laps.
+    /// </summary>
     public class Lap : ILap
     {
         public double DistanceInKm { get; set; }

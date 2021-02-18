@@ -3,6 +3,9 @@ using System;
 
 namespace SportsCompany.FitnessTracker.Endurance.BoundedContext
 {
+    /// <summary>
+    /// Value-object for a lap.
+    /// </summary>
     class Lap : ILap
     {
         public Lap(double distanceInKm, TimeSpan duration)
@@ -14,7 +17,14 @@ namespace SportsCompany.FitnessTracker.Endurance.BoundedContext
             Duration = duration;
         }
 
+        /// <summary>
+        /// Distance in kilometers of the lap.
+        /// </summary>
         public double DistanceInKm { get; }
+
+        /// <summary>
+        /// Duration of the lap to complete.
+        /// </summary>
         public TimeSpan Duration { get; }
     }
 }

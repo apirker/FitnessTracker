@@ -11,21 +11,36 @@ using System.Threading.Tasks;
 
 namespace SportsCompany.FitnessTracker.Endurance.ServiceMock
 {
+    /// <summary>
+    /// Service communication implementation which invokes the requested business logic on the backend service.
+    /// </summary>
     class TrainingServiceMock : ITrainingService, ITrainingRepository
     {
         private string baseUrl = "https://localhost:44349";
         private HttpClient client = new HttpClient();
 
+        /// <summary>
+        /// Adds a training to the backend service.
+        /// </summary>
+        /// <param name="training">Training.</param>
         public void Add(ITraining training)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Removes a training from the backend service.
+        /// </summary>
+        /// <param name="training">Training.</param>
         public void Delete(ITraining training)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Returns all trainings from the backend service.
+        /// </summary>
+        /// <returns>List of all trainings on the backend service.</returns>
         public IList<ITraining> GetAll()
         {
             var httpResult = client.GetAsync($"{baseUrl}/Training").GetAwaiter().GetResult();
@@ -52,22 +67,36 @@ namespace SportsCompany.FitnessTracker.Endurance.ServiceMock
             } as ITraining).ToList();
         }
 
+        /// <summary>
+        /// Saves a training on the backend service.
+        /// </summary>
         public void SaveTraining()
         {
             client.PostAsync($"{baseUrl}/Training/save", null).GetAwaiter().GetResult();
         }
 
+        /// <summary>
+        /// Starts a training on the backend service.
+        /// </summary>
         public void StartTraining(EnduranceDataService enduranceDataService)
         {
             client.PostAsync($"{baseUrl}/Training/start", null).GetAwaiter().GetResult();
         }
 
+        /// <summary>
+        /// Stops the training on the backend service.
+        /// </summary>
+        /// <returns>A training summary.</returns>
         public TrainingDto StopTraining()
         {
             var httpResult = client.PostAsync($"{baseUrl}/Training/stop", null).GetAwaiter().GetResult();
             return DeserializeResponse<TrainingDto>(httpResult).GetAwaiter().GetResult();
         }
 
+        /// <summary>
+        /// Updates a training on the backend service.
+        /// </summary>
+        /// <param name="training">Training.</param>
         public void Update(ITraining training)
         {
             throw new NotImplementedException();

@@ -13,6 +13,9 @@ namespace SportsCompany.FitnessTracker.UI.Hiit.HiitEditor.UiCommands
             return true;
         }
 
+        /// <summary>
+        /// Command execution.
+        /// </summary>
         public void Execute(object parameter)
         {
             var viewModel = parameter as HiitEditorViewModel;

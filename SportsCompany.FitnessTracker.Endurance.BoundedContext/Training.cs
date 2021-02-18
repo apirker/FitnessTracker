@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace SportsCompany.FitnessTracker.Endurance.BoundedContext
 {
+    /// <summary>
+    /// Aggregate for training in the endurance sub-domain.
+    /// </summary>
     class Training : ITraining
     {
         public Training(Type type)
@@ -24,6 +27,11 @@ namespace SportsCompany.FitnessTracker.Endurance.BoundedContext
 
         private CancellationTokenSource cancellation;
 
+        /// <summary>
+        /// Starts the training
+        /// </summary>
+        /// <param name="enduranceDataService">Service to communicate with the peripheral.</param>
+        /// <param name="gpsService">Service to get GPS coordinates from the environment.</param>
         public void Start(EnduranceDataService enduranceDataService, IGpsService gpsService)
         {
             cancellation = new CancellationTokenSource();
@@ -56,15 +64,27 @@ namespace SportsCompany.FitnessTracker.Endurance.BoundedContext
             );
         }
 
+        /// <summary>
+        /// Stops the training.
+        /// </summary>
         public void Stop()
         {
             cancellation.Cancel();
         }
 
+        /// <summary>
+        /// Total distance of the training.
+        /// </summary>
         internal double Distance => laps.Sum(l => l.DistanceInKm);
 
+        /// <summary>
+        /// Total duration of the training.
+        /// </summary>
         internal TimeSpan Duration => new TimeSpan(laps.Sum(l => l.Duration.Ticks));
 
+        /// <summary>
+        /// Training effect for the athelete.
+        /// </summary>
         public double TrainingsEffect {
 
             get{
@@ -75,12 +95,24 @@ namespace SportsCompany.FitnessTracker.Endurance.BoundedContext
             }
         }
 
+        /// <summary>
+        /// Type of the training.
+        /// </summary>
         internal Type Type => type;
 
+        /// <summary>
+        /// Collection of the laps of this training.
+        /// </summary>
         public List<ILap> Laps => laps.Select(l => l as ILap).ToList();
 
+        /// <summary>
+        /// Heart rate of this training.
+        /// </summary>
         public IHeartRate HeartRate => heartRate;
 
+        /// <summary>
+        /// GPS coordinates associated with this training.
+        /// </summary>
         public List<IGpsCoordinate> GpsCoordinates => gpsCoordinates.Select(g => g as IGpsCoordinate).ToList();
     }
 }

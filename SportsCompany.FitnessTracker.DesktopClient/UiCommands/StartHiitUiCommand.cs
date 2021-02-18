@@ -4,6 +4,9 @@ using System.Windows.Input;
 
 namespace SportsCompany.FitnessTracker.DesktopClient.UiCommands
 {
+    /// <summary>
+    /// Ui Command to open the HIIT UI.
+    /// </summary>
     class StartHiitUiCommand : ICommand
     {
         private readonly IHiitMainView hiitMainView;
@@ -20,6 +23,9 @@ namespace SportsCompany.FitnessTracker.DesktopClient.UiCommands
             return true;
         }
 
+        /// <summary>
+        /// Command execution.
+        /// </summary>
         public void Execute(object parameter)
         {
             hiitMainView.Show();

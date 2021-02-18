@@ -11,6 +11,9 @@ using Unity;
 
 namespace SportsCompany.FitnessTracker.Endurance.WebApi.Controllers
 {
+    /// <summary>
+    /// Backend service endpoint for interacting with endurance training bounded-context.
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class TrainingController : Controller
@@ -26,6 +29,10 @@ namespace SportsCompany.FitnessTracker.Endurance.WebApi.Controllers
             repository = unityContainer.Resolve<ITrainingRepository>();
         }
 
+        /// <summary>
+        /// API method to start a training.
+        /// </summary>
+        /// <returns>Status information.</returns>
         [HttpPost("start")]
         public async Task<string> Start()
         {
@@ -35,6 +42,10 @@ namespace SportsCompany.FitnessTracker.Endurance.WebApi.Controllers
             return "Start training";
         }
 
+        /// <summary>
+        /// API method to stop a training.
+        /// </summary>
+        /// <returns>Status information.</returns>
         [HttpPost("stop")]
         public async Task<string> Stop()
         {
@@ -44,6 +55,10 @@ namespace SportsCompany.FitnessTracker.Endurance.WebApi.Controllers
             return result;
         }
 
+        /// <summary>
+        /// API method to save a training.
+        /// </summary>
+        /// <returns>Status information.</returns>
         [HttpPost("save")]
         public async Task<string> Save()
         {
@@ -53,6 +68,10 @@ namespace SportsCompany.FitnessTracker.Endurance.WebApi.Controllers
             return "Save training";
         }
 
+        /// <summary>
+        /// API method to return all trainings.
+        /// </summary>
+        /// <returns>List of data transfer objects for trainings.</returns>
         [HttpGet]
         public async Task<List<DtoTraining>> GetAll()
         {

@@ -2,6 +2,9 @@
 
 namespace SportsCompany.FitnessTracker.Endurance.ServiceMock.Dtos
 {
+    /// <summary>
+    /// Data transfer object from backend for heart rates
+    /// </summary>
     public class DtoHeartRate
     {
         public List<(double, int)> Pulses { get; set; }

@@ -22,6 +22,9 @@ namespace SportsCompany.FitnessTracker.UI.Endurance.EnduranceActivity.UiCommands
             return true;
         }
 
+        /// <summary>
+        /// Command execution.
+        /// </summary>
         public void Execute(object parameter)
         {
             try
