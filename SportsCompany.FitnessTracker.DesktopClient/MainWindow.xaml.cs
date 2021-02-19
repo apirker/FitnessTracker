@@ -33,7 +33,7 @@ namespace SportsCompany.FitnessTracker.DesktopClient
 
             UiEnduranceInitializer.Init(unityContainer);
 
-            var useServiceImplementation = true;
+            var useServiceImplementation = false;
             if (useServiceImplementation)
             {
                 EnduranceServiceMockInitializer.Init(unityContainer);
