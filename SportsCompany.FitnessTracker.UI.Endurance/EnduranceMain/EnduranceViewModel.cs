@@ -1,11 +1,17 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 
 namespace SportsCompany.FitnessTracker.UI.Endurance.EnduranceMain
 {
+    /// <summary>
+    /// View model which contains the data for an individual endurance activity.
+    /// </summary>
     class EnduranceViewModel : INotifyPropertyChanged
     {
         private int laps;
+
+        /// <summary>
+        /// Number of laps completed as part of this activity.
+        /// </summary>
         public int Laps
         {
             get
@@ -22,6 +28,10 @@ namespace SportsCompany.FitnessTracker.UI.Endurance.EnduranceMain
         }
 
         private double average;
+
+        /// <summary>
+        /// Average heart beat for this endurance activity.
+        /// </summary>
         public double Average
         {
             get
@@ -38,6 +48,10 @@ namespace SportsCompany.FitnessTracker.UI.Endurance.EnduranceMain
         }
 
         private double trainingEffect;
+
+        /// <summary>
+        /// Training effect which the business logic determined for this activity.
+        /// </summary>
         public double TrainingEffect
         {
             get

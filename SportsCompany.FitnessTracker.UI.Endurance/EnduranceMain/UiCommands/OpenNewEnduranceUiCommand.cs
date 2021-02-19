@@ -7,6 +7,9 @@ using Unity;
 
 namespace SportsCompany.FitnessTracker.UI.Endurance.EnduranceMain.UiCommands
 {
+    /// <summary>
+    /// Ui Command to open a new endurance activity.
+    /// </summary>
     class OpenNewEnduranceUiCommand : ICommand
     {
         private readonly IUnityContainer unityContainer;

@@ -6,6 +6,9 @@ using System.Windows.Input;
 
 namespace SportsCompany.FitnessTracker.UI.Endurance.EnduranceActivity.UiCommands
 {
+    /// <summary>
+    /// Ui Command to start a new endurance activity within the domain.
+    /// </summary>
     class StartActivityUiCommand : ICommand
     {
         private readonly ITrainingService trainingService;

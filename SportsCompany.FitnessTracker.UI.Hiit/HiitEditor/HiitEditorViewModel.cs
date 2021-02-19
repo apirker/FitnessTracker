@@ -5,9 +5,16 @@ using Unity;
 
 namespace SportsCompany.FitnessTracker.UI.Hiit.HiitEditor
 {
+    /// <summary>
+    /// View model for creating a new HIIT workout.
+    /// </summary>
     class HiitEditorViewModel : INotifyPropertyChanged
     {
         private string name;
+
+        /// <summary>
+        /// Name of the HIIT workout.
+        /// </summary>
         public string Name
         {
             get
@@ -24,6 +31,10 @@ namespace SportsCompany.FitnessTracker.UI.Hiit.HiitEditor
         }
 
         private string roundSpecification;
+
+        /// <summary>
+        /// Input string to specify the next round of the HIIT workout.
+        /// </summary>
         public string RoundSpecification
         {
             get
@@ -39,11 +50,20 @@ namespace SportsCompany.FitnessTracker.UI.Hiit.HiitEditor
             }
         }
 
+        /// <summary>
+        /// Collection of all rounds which are part of the HIIT workout.
+        /// </summary>
         public ObservableCollection<RoundViewModel> Rounds { get; } = new ObservableCollection<RoundViewModel>();
 
+        /// <summary>
+        /// Ui command to add a round to the HIIT workout.
+        /// </summary>
         [Dependency(nameof(UiCommands.AddRoundUiCommand))]
         public ICommand AddRoundUiCommand { get; set; }
 
+        /// <summary>
+        /// Ui command to save the HIIT workout.
+        /// </summary>
         [Dependency(nameof(UiCommands.SaveUiCommand))]
         public ICommand SaveUiCommand { get; set; }
 

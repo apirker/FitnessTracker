@@ -5,9 +5,16 @@ using Unity;
 
 namespace SportsCompany.FitnessTracker.UI.Endurance.EnduranceActivity
 {
+    /// <summary>
+    /// View model for the view of an endurance activity.
+    /// </summary>
     class EnduranceActivityViewModel : INotifyPropertyChanged
     {
         private string state;
+
+        /// <summary>
+        /// State of the activity, started, stopped, ...
+        /// </summary>
         public string State
         {
             get
@@ -24,6 +31,10 @@ namespace SportsCompany.FitnessTracker.UI.Endurance.EnduranceActivity
         }
 
         private double distance;
+
+        /// <summary>
+        /// Total distance of the activity.
+        /// </summary>
         public double Distance
         {
             get
@@ -40,6 +51,10 @@ namespace SportsCompany.FitnessTracker.UI.Endurance.EnduranceActivity
         }
 
         private TimeSpan duration;
+        
+        /// <summary>
+        /// Total duration of the activity.
+        /// </summary>
         public TimeSpan Duration
         {
             get
@@ -56,6 +71,10 @@ namespace SportsCompany.FitnessTracker.UI.Endurance.EnduranceActivity
         }
 
         private double trainingEffect;
+        
+        /// <summary>
+        /// The training effect which the business logic determined for this activity.
+        /// </summary>
         public double TrainingEffect
         {
             get
@@ -71,12 +90,21 @@ namespace SportsCompany.FitnessTracker.UI.Endurance.EnduranceActivity
             }
         }
 
+        /// <summary>
+        /// Ui command to start the activity.
+        /// </summary>
         [Dependency(nameof(UiCommands.StartActivityUiCommand))]
         public ICommand StartActivityUiCommand { get; set; }
 
+        /// <summary>
+        /// Ui command to stop the activity.
+        /// </summary>
         [Dependency(nameof(UiCommands.StopActivityUiCommand))]
         public ICommand StopActivityUiCommand { get; set; }
 
+        /// <summary>
+        /// Ui command to save the activity.
+        /// </summary>
         [Dependency(nameof(UiCommands.SaveActivityUiCommand))]
         public ICommand SaveActivityUiCommand { get; set; }
 

@@ -3,9 +3,16 @@ using System.ComponentModel;
 
 namespace SportsCompany.FitnessTracker.UI.Hiit.HiitMain
 {
+    /// <summary>
+    /// View model of an individual HIIT training.
+    /// </summary>
     public class HiitTrainingViewModel : INotifyPropertyChanged
     {
         private string name;
+
+        /// <summary>
+        /// Name of the HIIT workout.
+        /// </summary>
         public string Name
         {
             get
@@ -22,6 +29,10 @@ namespace SportsCompany.FitnessTracker.UI.Hiit.HiitMain
         }
 
         private int numberOfRounds;
+
+        /// <summary>
+        /// Number of rounds which this HIIT workout comprises.
+        /// </summary>
         public int NumberOfRounds
         {
             get
@@ -38,6 +49,10 @@ namespace SportsCompany.FitnessTracker.UI.Hiit.HiitMain
         }
 
         private TimeSpan? lastDuration;
+        
+        /// <summary>
+        /// Last duration the athlete needed to completed the workout.
+        /// </summary>
         public TimeSpan? LastDuration
         {
             get

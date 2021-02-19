@@ -5,6 +5,9 @@ using System.Windows.Input;
 
 namespace SportsCompany.FitnessTracker.UI.Hiit.HiitTraing.UiCommands
 {
+    /// <summary>
+    /// Ui command to start the HIIT workout.
+    /// </summary>
     class StartTrainingUiCommand : ICommand
     {
         private readonly ITrainingExecutor trainingExecutor;
@@ -21,6 +24,9 @@ namespace SportsCompany.FitnessTracker.UI.Hiit.HiitTraing.UiCommands
             return true;
         }
 
+        /// <summary>
+        /// Command execution.
+        /// </summary>
         public void Execute(object parameter)
         {
             try

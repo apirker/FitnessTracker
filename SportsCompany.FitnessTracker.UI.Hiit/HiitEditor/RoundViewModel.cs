@@ -4,9 +4,16 @@ using System.Text;
 
 namespace SportsCompany.FitnessTracker.UI.Hiit.HiitEditor
 {
+    /// <summary>
+    /// View model which corresponds to a single round in the HIIT workout.
+    /// </summary>
     class RoundViewModel : INotifyPropertyChanged
     {
         private int roundNumber;
+
+        /// <summary>
+        /// Number of the round within the workout.
+        /// </summary>
         public int RoundNumber
         {
             get
@@ -22,6 +29,9 @@ namespace SportsCompany.FitnessTracker.UI.Hiit.HiitEditor
             }
         }
 
+        /// <summary>
+        /// Collection of exercises which comprise the round.
+        /// </summary>
         public ObservableCollection<ExerciseViewModel> Exercises { get; } = new ObservableCollection<ExerciseViewModel>();
 
         public event PropertyChangedEventHandler PropertyChanged;

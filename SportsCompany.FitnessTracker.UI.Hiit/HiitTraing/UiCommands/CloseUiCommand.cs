@@ -4,6 +4,9 @@ using System.Windows.Input;
 
 namespace SportsCompany.FitnessTracker.UI.Hiit.HiitTraing.UiCommands
 {
+    /// <summary>
+    /// Ui command which closes the training.
+    /// </summary>
     class CloseUiCommand : ICommand
     {
         private readonly IHiitTrainView view;
@@ -20,6 +23,9 @@ namespace SportsCompany.FitnessTracker.UI.Hiit.HiitTraing.UiCommands
             return true;
         }
 
+        /// <summary>
+        /// Command execution.
+        /// </summary>
         public void Execute(object parameter)
         {
             try

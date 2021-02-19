@@ -5,6 +5,9 @@ using System.Windows.Input;
 
 namespace SportsCompany.FitnessTracker.UI.Endurance.EnduranceActivity.UiCommands
 {
+    /// <summary>
+    /// Ui Command to open the stop the last endurance activity.
+    /// </summary>
     class StopActivityUiCommand : ICommand
     {
         private readonly ITrainingService trainingService;

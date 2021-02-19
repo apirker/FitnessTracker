@@ -7,6 +7,9 @@ using Unity;
 
 namespace SportsCompany.FitnessTracker.UI.Hiit.HiitMain.UiCommands
 {
+    /// <summary>
+    /// Ui command to open the editor to create a new HIIT workout.
+    /// </summary>
     class OpenCreateNewTrainingCommand : ICommand
     {
         private readonly IUnityContainer unityContainer;
@@ -23,6 +26,9 @@ namespace SportsCompany.FitnessTracker.UI.Hiit.HiitMain.UiCommands
             return true;
         }
 
+        /// <summary>
+        /// Command execution.
+        /// </summary>
         public void Execute(object parameter)
         {
             try

@@ -5,6 +5,9 @@ using System.Windows.Input;
 
 namespace SportsCompany.FitnessTracker.UI.Endurance.EnduranceActivity.UiCommands
 {
+    /// <summary>
+    /// Ui Command to to save the last endurance activity.
+    /// </summary>
     class SaveActivityUiCommand : ICommand
     {
         private readonly IEnduranceActivityView view;

@@ -4,6 +4,9 @@ using System.Windows.Input;
 
 namespace SportsCompany.FitnessTracker.UI.Hiit.HiitEditor.UiCommands
 {
+    /// <summary>
+    /// Ui command to add a round to a HIIT workout.
+    /// </summary>
     class AddRoundUiCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;

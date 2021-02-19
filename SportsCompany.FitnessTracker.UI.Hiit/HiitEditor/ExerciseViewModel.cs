@@ -2,9 +2,16 @@
 
 namespace SportsCompany.FitnessTracker.UI.Hiit.HiitEditor
 {
+    /// <summary>
+    /// View model of an individual exercise.
+    /// </summary>
     class ExerciseViewModel : INotifyPropertyChanged
     {
         private string name;
+
+        /// <summary>
+        /// Name of the exercise.
+        /// </summary>
         public string Name
         {
             get
@@ -21,6 +28,10 @@ namespace SportsCompany.FitnessTracker.UI.Hiit.HiitEditor
         }
 
         private int duration;
+
+        /// <summary>
+        /// Duration in sec. of the exercise.
+        /// </summary>
         public int Duration
         {
             get

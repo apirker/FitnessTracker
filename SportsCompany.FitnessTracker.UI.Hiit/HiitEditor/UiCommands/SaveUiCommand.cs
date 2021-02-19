@@ -5,6 +5,9 @@ using System.Windows.Input;
 
 namespace SportsCompany.FitnessTracker.UI.Hiit.HiitEditor.UiCommands
 {
+    /// <summary>
+    /// Ui command to save the created HIIT workout.
+    /// </summary>
     class SaveUiCommand : ICommand
     {
         private readonly ITrainingPlanner trainingPlanner;

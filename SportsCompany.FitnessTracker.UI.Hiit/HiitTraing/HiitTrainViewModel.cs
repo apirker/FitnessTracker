@@ -5,9 +5,16 @@ using Unity;
 
 namespace SportsCompany.FitnessTracker.UI.Hiit.HiitTraing
 {
+    /// <summary>
+    /// View model for the HIIT training while its in progress.
+    /// </summary>
     class HiitTrainViewModel : INotifyPropertyChanged
     {
         private string name;
+
+        /// <summary>
+        /// Name of the HIIT training.
+        /// </summary>
         public string Name
         {
             get
@@ -24,6 +31,10 @@ namespace SportsCompany.FitnessTracker.UI.Hiit.HiitTraing
         }
 
         private TimeSpan? duration;
+
+        /// <summary>
+        /// Duration of the training.
+        /// </summary>
         public TimeSpan? Duration
         {
             get
@@ -39,17 +50,23 @@ namespace SportsCompany.FitnessTracker.UI.Hiit.HiitTraing
             }
         }
 
+        /// <summary>
+        /// Ui command to start the HIIT training.
+        /// </summary>
         [Dependency(nameof(StartTrainingUiCommand))]
         public ICommand StartTrainingUiCommand { get; set; }
 
+        /// <summary>
+        /// Ui command to stop the HIIT training.
+        /// </summary>
         [Dependency(nameof(StopTrainingUiCommand))]
         public ICommand StopTrainingUiCommand { get; set; }
 
+        /// <summary>
+        /// Ui command to close the training view.
+        /// </summary>
         [Dependency(nameof(CloseUiCommand))]
         public ICommand CloseUiCommand { get; set; }
-
-
-
 
         public event PropertyChangedEventHandler PropertyChanged;
 

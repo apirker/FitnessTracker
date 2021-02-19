@@ -1,14 +1,13 @@
 ﻿using SportsCompany.FitnessTracker.Hiit.Contracts;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
 namespace SportsCompany.FitnessTracker.UI.Hiit.HiitTraing.UiCommands
 {
+    /// <summary>
+    /// Ui command to stop the HIIT training.
+    /// </summary>
     class StopTrainingUiCommand : ICommand
     {
         private readonly ITrainingExecutor trainingExecutor;
@@ -27,6 +26,9 @@ namespace SportsCompany.FitnessTracker.UI.Hiit.HiitTraing.UiCommands
             return true;
         }
 
+        /// <summary>
+        /// Command execution.
+        /// </summary>
         public void Execute(object parameter)
         {
             try
